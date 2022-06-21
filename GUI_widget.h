@@ -115,7 +115,7 @@ protected:
 	int status;
 
 	/* Useful for getting error feedback */
-	void SetError(char *fmt, ...) {
+	void SetError(const char *fmt, ...) {
 		va_list ap;
 
 		va_start(ap, fmt);

@@ -68,7 +68,8 @@ GUI_Font::~GUI_Font()
 /* determine drawing style */
 void GUI_Font::SetTransparency(int on)
 {
-  if (transparent=on)  // single "=" is correct
+  transparent = on;
+  if (transparent)
     SDL_SetColorKey(fontStore,SDL_SRCCOLORKEY,0);
   else
     SDL_SetColorKey(fontStore,0,0);
@@ -94,7 +95,7 @@ void GUI_Font::TextOut(SDL_Surface* context,int x, int y, char* text)
   dst.w = charw;
   dst.h = charh-1;
   i=0;
-  while (ch=text[i])  // single "=" is correct!
+  while ((ch=text[i]) != 0)
   {
     src.x = (ch%16)*charw;
     src.y = (ch/16)*charh;

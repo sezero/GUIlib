@@ -18,7 +18,7 @@ enum image_names {
 	IMAGE_SCROLL_DN,
 	NUM_IMAGES
 };
-char *image_files[NUM_IMAGES] = {
+const char *image_files[NUM_IMAGES] = {
 	"hello.bmp", "hello2.bmp", "scroll_up.bmp", "scroll_dn.bmp"
 };
 SDL_Surface *images[NUM_IMAGES];
