@@ -21,7 +21,7 @@ public:
   /* copy constructor */
   GUI_Font(GUI_Font& font);
 
-  ~GUI_Font();
+  virtual ~GUI_Font();
 
   /* determine drawing style */
   virtual void SetTransparency(int on);
