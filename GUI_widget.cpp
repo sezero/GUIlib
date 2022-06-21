@@ -205,18 +205,12 @@ GUI_status
 GUI_Widget:: HandleEvent(const SDL_Event *event)
 {
 	switch (event->type) {
-		case SDL_TEXTINPUT: {
+		case SDL_TEXTINPUT:
 			return(TextInput(event->text.text));
-		}
-		break;
-		case SDL_KEYDOWN: {
+		case SDL_KEYDOWN:
 			return(KeyDown(event->key.keysym));
-		}
-		break;
-		case SDL_KEYUP: {
+		case SDL_KEYUP:
 			return(KeyUp(event->key.keysym));
-		}
-		break;
 		case SDL_MOUSEBUTTONDOWN: {
 			int x, y, button;
 			x = event->button.x;
@@ -249,7 +243,7 @@ GUI_Widget:: HandleEvent(const SDL_Event *event)
 			state = event->motion.state;
 			if ( HitRect(x, y) )
 			{
-  			  return(MouseMotion(x, y, state));
+			  return(MouseMotion(x, y, state));
 			}
 			/* if widget was clicked before we must let it react*/
 			else if (ClickState(1)) return(MouseMotion(-1,-1,state));
